@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PickerTextField;
 
 @interface TranslatorHeaderTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (weak, nonatomic) IBOutlet PickerTextField *fromPicker;
+@property (weak, nonatomic) IBOutlet PickerTextField *toPicker;
+@property (weak, nonatomic) IBOutlet UIButton *inverseButton;
 
 @end

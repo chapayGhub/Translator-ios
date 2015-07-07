@@ -19,6 +19,11 @@
 		BED954251B4B943B00C1BF9F /* NSDictionary+PathExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954241B4B943B00C1BF9F /* NSDictionary+PathExtension.m */; };
 		BED954291B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954271B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m */; };
 		BED9542A1B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED954281B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib */; };
+		BED954331B4BB1F500C1BF9F /* search_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BED954321B4BB1F500C1BF9F /* search_button.png */; };
+		BED9543B1B4BBBFA00C1BF9F /* DropDownArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9543A1B4BBBFA00C1BF9F /* DropDownArrowView.m */; };
+		BED9543E1B4BBC8600C1BF9F /* PickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9543D1B4BBC8600C1BF9F /* PickerTextField.m */; };
+		BED954401B4BCA6000C1BF9F /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = BED9543F1B4BCA6000C1BF9F /* Properties.plist */; };
+		BED954431B4BCB9F00C1BF9F /* AppPref.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954421B4BCB9F00C1BF9F /* AppPref.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,14 @@
 		BED954261B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslatorHeaderTableViewCell.h; sourceTree = "<group>"; };
 		BED954271B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatorHeaderTableViewCell.m; sourceTree = "<group>"; };
 		BED954281B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TranslatorHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		BED954321B4BB1F500C1BF9F /* search_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_button.png; sourceTree = "<group>"; };
+		BED954391B4BBBFA00C1BF9F /* DropDownArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownArrowView.h; sourceTree = "<group>"; };
+		BED9543A1B4BBBFA00C1BF9F /* DropDownArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownArrowView.m; sourceTree = "<group>"; };
+		BED9543C1B4BBC8600C1BF9F /* PickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerTextField.h; sourceTree = "<group>"; };
+		BED9543D1B4BBC8600C1BF9F /* PickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerTextField.m; sourceTree = "<group>"; };
+		BED9543F1B4BCA6000C1BF9F /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
+		BED954411B4BCB9F00C1BF9F /* AppPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPref.h; sourceTree = "<group>"; };
+		BED954421B4BCB9F00C1BF9F /* AppPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPref.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +109,8 @@
 		BED953C41B4B510000C1BF9F /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				BED954381B4BBBB800C1BF9F /* UI */,
+				BED954311B4BB1BB00C1BF9F /* Resources */,
 				BED954151B4B906000C1BF9F /* TranslatorMainViewController */,
 				BED953EB1B4B520300C1BF9F /* Extensions */,
 				BED953C91B4B510000C1BF9F /* AppDelegate.h */,
@@ -104,6 +119,8 @@
 				BED953C51B4B510000C1BF9F /* Supporting Files */,
 				BED953EC1B4B529100C1BF9F /* AppController.h */,
 				BED953ED1B4B529100C1BF9F /* AppController.m */,
+				BED954411B4BCB9F00C1BF9F /* AppPref.h */,
+				BED954421B4BCB9F00C1BF9F /* AppPref.m */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -157,6 +174,26 @@
 				BED954281B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib */,
 			);
 			path = TranslatorMainViewController;
+			sourceTree = "<group>";
+		};
+		BED954311B4BB1BB00C1BF9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BED954321B4BB1F500C1BF9F /* search_button.png */,
+				BED9543F1B4BCA6000C1BF9F /* Properties.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BED954381B4BBBB800C1BF9F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BED954391B4BBBFA00C1BF9F /* DropDownArrowView.h */,
+				BED9543A1B4BBBFA00C1BF9F /* DropDownArrowView.m */,
+				BED9543C1B4BBC8600C1BF9F /* PickerTextField.h */,
+				BED9543D1B4BBC8600C1BF9F /* PickerTextField.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +281,8 @@
 				BED9541A1B4B90E100C1BF9F /* TranslatorMainTableViewController.xib in Resources */,
 				BED9541D1B4B91D000C1BF9F /* Localizable.strings in Resources */,
 				BED953D31B4B510000C1BF9F /* Images.xcassets in Resources */,
+				BED954331B4BB1F500C1BF9F /* search_button.png in Resources */,
+				BED954401B4BCA6000C1BF9F /* Properties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED954431B4BCB9F00C1BF9F /* AppPref.m in Sources */,
 				BED953CB1B4B510000C1BF9F /* AppDelegate.m in Sources */,
+				BED9543B1B4BBBFA00C1BF9F /* DropDownArrowView.m in Sources */,
 				BED954291B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m in Sources */,
 				BED953EE1B4B529100C1BF9F /* AppController.m in Sources */,
+				BED9543E1B4BBC8600C1BF9F /* PickerTextField.m in Sources */,
 				BED953C81B4B510000C1BF9F /* main.m in Sources */,
 				BED954251B4B943B00C1BF9F /* NSDictionary+PathExtension.m in Sources */,
 				BED954191B4B90E100C1BF9F /* TranslatorMainTableViewController.m in Sources */,

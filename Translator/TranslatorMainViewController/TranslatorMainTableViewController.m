@@ -8,6 +8,7 @@
 
 #import "TranslatorMainTableViewController.h"
 #import "UIViewController+AppController.h"
+static NSString *const TRANSLATOR_HEADER_FIELD = @"TranslatorHeaderField";
 @interface TranslatorMainTableViewController ()
 
 @end
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"MainTableViewController_title", nil);
+    [self.tableView registerNib:[UINib nibWithNibName:@"TranslatorHeaderTableViewCell" bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:TRANSLATOR_HEADER_FIELD];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,26 +38,30 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if(section == 0){
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    if(indexPath.section == 0){
+        if(indexPath.row ==0){
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TRANSLATOR_HEADER_FIELD forIndexPath:indexPath];
+            return cell;
+        }
+        return nil;
+    } else {
+        return nil;
+    }
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

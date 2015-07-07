@@ -1,18 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TranslatorHeaderTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="KGk-i7-Jjw" customClass="TranslatorHeaderTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiW-PT-d32">
+                        <rect key="frame" x="16" y="12" width="248" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sax-xv-afe">
+                        <rect key="frame" x="272" y="5" width="40" height="40"/>
+                        <state key="normal" image="search_button.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eba-fY-vy2" customClass="PickerTextField">
+                        <rect key="frame" x="16" y="50" width="105" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVp-2k-iya" customClass="PickerTextField">
+                        <rect key="frame" x="159" y="50" width="105" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieg-7N-C1E">
+                        <rect key="frame" x="125" y="50" width="30" height="30"/>
+                        <state key="normal" title="B">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EVp-2k-iya" firstAttribute="leading" secondItem="ieg-7N-C1E" secondAttribute="trailing" constant="4" id="1Vb-Kv-B5D"/>
+                    <constraint firstItem="EVp-2k-iya" firstAttribute="top" secondItem="IiW-PT-d32" secondAttribute="bottom" constant="8" id="DZd-Ex-umB"/>
+                    <constraint firstAttribute="centerX" secondItem="ieg-7N-C1E" secondAttribute="centerX" constant="20" id="FvP-95-1Xh"/>
+                    <constraint firstItem="IiW-PT-d32" firstAttribute="topMargin" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="FzE-ua-Xpg"/>
+                    <constraint firstItem="Sax-xv-afe" firstAttribute="topMargin" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="GVt-UR-HGT"/>
+                    <constraint firstAttribute="trailing" secondItem="Sax-xv-afe" secondAttribute="trailing" constant="8" id="Hyb-Hk-mck"/>
+                    <constraint firstItem="eba-fY-vy2" firstAttribute="top" secondItem="IiW-PT-d32" secondAttribute="bottom" constant="8" id="NPG-ou-kYx"/>
+                    <constraint firstItem="IiW-PT-d32" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Npn-7H-CSC"/>
+                    <constraint firstItem="Sax-xv-afe" firstAttribute="leading" secondItem="IiW-PT-d32" secondAttribute="trailing" constant="8" id="gj0-3r-IVb"/>
+                    <constraint firstItem="ieg-7N-C1E" firstAttribute="leading" secondItem="eba-fY-vy2" secondAttribute="trailing" constant="4" id="lGF-tT-Eee"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EVp-2k-iya" secondAttribute="trailing" constant="48" id="uhD-gZ-xTF"/>
+                    <constraint firstItem="ieg-7N-C1E" firstAttribute="top" secondItem="IiW-PT-d32" secondAttribute="bottom" constant="8" id="wj6-Dn-UQU"/>
+                    <constraint firstItem="eba-fY-vy2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="y9k-g3-z4w"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="fromPicker" destination="eba-fY-vy2" id="l7Z-tE-o2l"/>
+                <outlet property="inverseButton" destination="ieg-7N-C1E" id="J0b-hQ-3hb"/>
+                <outlet property="searchButton" destination="Sax-xv-afe" id="ida-hC-KwQ"/>
+                <outlet property="searchTextField" destination="IiW-PT-d32" id="iwH-G0-707"/>
+                <outlet property="toPicker" destination="EVp-2k-iya" id="NwC-U6-vCX"/>
+            </connections>
+            <point key="canvasLocation" x="355" y="576.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="search_button.png" width="40" height="40"/>
+    </resources>
 </document>
