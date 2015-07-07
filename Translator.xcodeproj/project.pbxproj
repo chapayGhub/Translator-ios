@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		BED953C81B4B510000C1BF9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BED953C71B4B510000C1BF9F /* main.m */; };
 		BED953CB1B4B510000C1BF9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BED953CA1B4B510000C1BF9F /* AppDelegate.m */; };
-		BED953CE1B4B510000C1BF9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED953CD1B4B510000C1BF9F /* ViewController.m */; };
-		BED953D11B4B510000C1BF9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED953CF1B4B510000C1BF9F /* Main.storyboard */; };
 		BED953D31B4B510000C1BF9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED953D21B4B510000C1BF9F /* Images.xcassets */; };
-		BED953D61B4B510000C1BF9F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED953D41B4B510000C1BF9F /* LaunchScreen.xib */; };
 		BED953E21B4B510000C1BF9F /* TranslatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BED953E11B4B510000C1BF9F /* TranslatorTests.m */; };
+		BED953EE1B4B529100C1BF9F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED953ED1B4B529100C1BF9F /* AppController.m */; };
+		BED954101B4B895200C1BF9F /* UIViewController+AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9540F1B4B895200C1BF9F /* UIViewController+AppController.m */; };
+		BED954191B4B90E100C1BF9F /* TranslatorMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954171B4B90E100C1BF9F /* TranslatorMainTableViewController.m */; };
+		BED9541A1B4B90E100C1BF9F /* TranslatorMainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED954181B4B90E100C1BF9F /* TranslatorMainTableViewController.xib */; };
+		BED9541D1B4B91D000C1BF9F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BED9541F1B4B91D000C1BF9F /* Localizable.strings */; };
+		BED954251B4B943B00C1BF9F /* NSDictionary+PathExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954241B4B943B00C1BF9F /* NSDictionary+PathExtension.m */; };
+		BED954291B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954271B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m */; };
+		BED9542A1B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED954281B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,24 @@
 		BED953C71B4B510000C1BF9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BED953C91B4B510000C1BF9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BED953CA1B4B510000C1BF9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BED953CC1B4B510000C1BF9F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BED953CD1B4B510000C1BF9F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BED953D01B4B510000C1BF9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BED953D21B4B510000C1BF9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BED953D51B4B510000C1BF9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BED953DB1B4B510000C1BF9F /* TranslatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED953E01B4B510000C1BF9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED953E11B4B510000C1BF9F /* TranslatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslatorTests.m; sourceTree = "<group>"; };
+		BED953EC1B4B529100C1BF9F /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		BED953ED1B4B529100C1BF9F /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		BED9540E1B4B895200C1BF9F /* UIViewController+AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AppController.h"; sourceTree = "<group>"; };
+		BED9540F1B4B895200C1BF9F /* UIViewController+AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AppController.m"; sourceTree = "<group>"; };
+		BED954161B4B90E100C1BF9F /* TranslatorMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslatorMainTableViewController.h; sourceTree = "<group>"; };
+		BED954171B4B90E100C1BF9F /* TranslatorMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatorMainTableViewController.m; sourceTree = "<group>"; };
+		BED954181B4B90E100C1BF9F /* TranslatorMainTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TranslatorMainTableViewController.xib; sourceTree = "<group>"; };
+		BED9541E1B4B91D000C1BF9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BED954221B4B92AF00C1BF9F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BED954231B4B941A00C1BF9F /* NSDictionary+PathExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PathExtension.h"; sourceTree = "<group>"; };
+		BED954241B4B943B00C1BF9F /* NSDictionary+PathExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PathExtension.m"; sourceTree = "<group>"; };
+		BED954261B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslatorHeaderTableViewCell.h; sourceTree = "<group>"; };
+		BED954271B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatorHeaderTableViewCell.m; sourceTree = "<group>"; };
+		BED954281B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TranslatorHeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +96,14 @@
 		BED953C41B4B510000C1BF9F /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				BED954151B4B906000C1BF9F /* TranslatorMainViewController */,
+				BED953EB1B4B520300C1BF9F /* Extensions */,
 				BED953C91B4B510000C1BF9F /* AppDelegate.h */,
 				BED953CA1B4B510000C1BF9F /* AppDelegate.m */,
-				BED953CC1B4B510000C1BF9F /* ViewController.h */,
-				BED953CD1B4B510000C1BF9F /* ViewController.m */,
-				BED953CF1B4B510000C1BF9F /* Main.storyboard */,
 				BED953D21B4B510000C1BF9F /* Images.xcassets */,
-				BED953D41B4B510000C1BF9F /* LaunchScreen.xib */,
 				BED953C51B4B510000C1BF9F /* Supporting Files */,
+				BED953EC1B4B529100C1BF9F /* AppController.h */,
+				BED953ED1B4B529100C1BF9F /* AppController.m */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -98,6 +113,7 @@
 			children = (
 				BED953C61B4B510000C1BF9F /* Info.plist */,
 				BED953C71B4B510000C1BF9F /* main.m */,
+				BED9541F1B4B91D000C1BF9F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +133,30 @@
 				BED953E01B4B510000C1BF9F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BED953EB1B4B520300C1BF9F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BED9540E1B4B895200C1BF9F /* UIViewController+AppController.h */,
+				BED9540F1B4B895200C1BF9F /* UIViewController+AppController.m */,
+				BED954231B4B941A00C1BF9F /* NSDictionary+PathExtension.h */,
+				BED954241B4B943B00C1BF9F /* NSDictionary+PathExtension.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BED954151B4B906000C1BF9F /* TranslatorMainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BED954161B4B90E100C1BF9F /* TranslatorMainTableViewController.h */,
+				BED954171B4B90E100C1BF9F /* TranslatorMainTableViewController.m */,
+				BED954181B4B90E100C1BF9F /* TranslatorMainTableViewController.xib */,
+				BED954261B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.h */,
+				BED954271B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m */,
+				BED954281B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib */,
+			);
+			path = TranslatorMainViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +222,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = BED953B91B4B510000C1BF9F;
 			productRefGroup = BED953C31B4B510000C1BF9F /* Products */;
@@ -199,8 +240,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BED953D11B4B510000C1BF9F /* Main.storyboard in Resources */,
-				BED953D61B4B510000C1BF9F /* LaunchScreen.xib in Resources */,
+				BED9542A1B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.xib in Resources */,
+				BED9541A1B4B90E100C1BF9F /* TranslatorMainTableViewController.xib in Resources */,
+				BED9541D1B4B91D000C1BF9F /* Localizable.strings in Resources */,
 				BED953D31B4B510000C1BF9F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BED953CE1B4B510000C1BF9F /* ViewController.m in Sources */,
 				BED953CB1B4B510000C1BF9F /* AppDelegate.m in Sources */,
+				BED954291B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m in Sources */,
+				BED953EE1B4B529100C1BF9F /* AppController.m in Sources */,
 				BED953C81B4B510000C1BF9F /* main.m in Sources */,
+				BED954251B4B943B00C1BF9F /* NSDictionary+PathExtension.m in Sources */,
+				BED954191B4B90E100C1BF9F /* TranslatorMainTableViewController.m in Sources */,
+				BED954101B4B895200C1BF9F /* UIViewController+AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,20 +290,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BED953CF1B4B510000C1BF9F /* Main.storyboard */ = {
+		BED9541F1B4B91D000C1BF9F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BED953D01B4B510000C1BF9F /* Base */,
+				BED9541E1B4B91D000C1BF9F /* en */,
+				BED954221B4B92AF00C1BF9F /* zh-Hans */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BED953D41B4B510000C1BF9F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BED953D51B4B510000C1BF9F /* Base */,
-			);
-			name = LaunchScreen.xib;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -349,7 +388,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Translator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Translator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

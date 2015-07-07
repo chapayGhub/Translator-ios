@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TranslatorHeaderTableViewCell.h
 //  Translator
 //
 //  Created by Kevin Mun Kuang Tzer on 7/7/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TranslatorHeaderTableViewCell : UITableViewCell
 
 @end
-
