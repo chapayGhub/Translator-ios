@@ -11,6 +11,7 @@
 
 @interface PickerTextField()
 @property (nonatomic, strong) UIPickerView *pickerView;
+@property (nonatomic, strong) UITapGestureRecognizer *recognizer;
 @end
 
 @implementation PickerTextField
@@ -21,14 +22,41 @@
         self.leftViewMode = UITextFieldViewModeAlways;
         self.layer.borderColor = [[UIColor colorWithRed: 0.827 green: 0.827 blue: 0.827 alpha: 1] CGColor];;
         self.layer.borderWidth= 1.0f;
-        
         self.rightView = [DropDownArrowView default];
         self.rightViewMode = UITextFieldViewModeAlways;
-        self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectZero];
+        
+        self.recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickArrow:)];
+        [self.recognizer setNumberOfTouchesRequired:1];
+        [self.recognizer setDelegate:self];
+        self.rightView.gestureRecognizers = [NSArray arrayWithObjects:self.recognizer, nil];
+        
+        self.pickerView = [[UIPickerView alloc] init];
         self.pickerView.showsSelectionIndicator = YES;
+        
+        UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
+        keyboardDoneButtonView.barStyle = UIBarStyleDefault;
+        keyboardDoneButtonView.translucent = YES;
+        [keyboardDoneButtonView sizeToFit];
+        UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                        style:UIBarButtonItemStyleBordered target:self
+                                                                       action:@selector(pickerDoneClicked:)];
+        UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:flexSpace,doneButton, nil]];
+        
+        self.inputAccessoryView = keyboardDoneButtonView;
+        
         self.inputView = self.pickerView;
+        self.delegate = self;
     }
     return self;
+}
+
+-(void) clickArrow:(id)sender{
+    [self becomeFirstResponder];
+}
+
+-(void) pickerDoneClicked:(id)sender{
+    [self resignFirstResponder];
 }
 
 -(void)setTag:(NSInteger)tag {
@@ -37,11 +65,15 @@
 }
 
 -(void)setPickerDelegate:(id<UIPickerViewDelegate>)pickerDelegate {
-    self.pickerView.delegate = pickerDelegate;
+    [self.pickerView setDelegate:pickerDelegate];
 }
 
 -(void)setPickerDataSource:(id<UIPickerViewDataSource>)pickerDataSource {
-    self.pickerView.dataSource = pickerDataSource;
+    [self.pickerView setDataSource:pickerDataSource];
+}
+
+-(void) reloadAllComponents{
+    [self.pickerView reloadAllComponents];
 }
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 @protocol AppController;
-@interface TranslatorMainTableViewController : UITableViewController
+@interface TranslatorMainTableViewController : UITableViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 -(instancetype)initWithAppController:(id<AppController>)appController;
 @end

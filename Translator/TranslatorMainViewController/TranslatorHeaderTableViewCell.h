@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class PickerTextField;
+#import "PickerTextField.h"
 
 @interface TranslatorHeaderTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

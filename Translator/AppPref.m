@@ -10,4 +10,9 @@
 
 @implementation AppPref
 
++(NSArray*) getLanguages{
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Properties" ofType:@"plist"]];
+    return [dictionary objectForKey:@"languages"];
+}
+
 @end

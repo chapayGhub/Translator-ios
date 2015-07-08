@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PickerTextField : UITextField
+@interface PickerTextField : UITextField<UIGestureRecognizerDelegate, UITextFieldDelegate>
 @property (nonatomic) id<UIPickerViewDelegate> pickerDelegate;
 @property (nonatomic) id<UIPickerViewDataSource> pickerDataSource;
+@property (nonatomic,assign) int selectedRow;
+-(void) reloadAllComponents;
 @end

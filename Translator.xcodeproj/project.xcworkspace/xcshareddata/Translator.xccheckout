@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CC17E76A-7454-44B2-AC54-20809CACBB5D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Translator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E47AEBFA05EBE001DA327BC17D12EB9EF6E49DB9</key>
 		<string>https://github.com/kevinmun/Translator-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Translator.xcodeproj/project.xcworkspace</string>
+	<string>Translator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E47AEBFA05EBE001DA327BC17D12EB9EF6E49DB9</key>

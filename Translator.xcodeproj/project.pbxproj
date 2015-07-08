@@ -24,6 +24,9 @@
 		BED9543E1B4BBC8600C1BF9F /* PickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9543D1B4BBC8600C1BF9F /* PickerTextField.m */; };
 		BED954401B4BCA6000C1BF9F /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = BED9543F1B4BCA6000C1BF9F /* Properties.plist */; };
 		BED954431B4BCB9F00C1BF9F /* AppPref.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954421B4BCB9F00C1BF9F /* AppPref.m */; };
+		BED9544F1B4CE65F00C1BF9F /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9544E1B4CE65F00C1BF9F /* Language.m */; };
+		BED954521B4CE72F00C1BF9F /* TranslationResultList.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954511B4CE72F00C1BF9F /* TranslationResultList.m */; };
+		BED954551B4CE8A000C1BF9F /* TranslationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BED954541B4CE8A000C1BF9F /* TranslationResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,12 @@
 		BED9543F1B4BCA6000C1BF9F /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
 		BED954411B4BCB9F00C1BF9F /* AppPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPref.h; sourceTree = "<group>"; };
 		BED954421B4BCB9F00C1BF9F /* AppPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPref.m; sourceTree = "<group>"; };
+		BED9544D1B4CE65F00C1BF9F /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
+		BED9544E1B4CE65F00C1BF9F /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
+		BED954501B4CE72F00C1BF9F /* TranslationResultList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationResultList.h; sourceTree = "<group>"; };
+		BED954511B4CE72F00C1BF9F /* TranslationResultList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationResultList.m; sourceTree = "<group>"; };
+		BED954531B4CE8A000C1BF9F /* TranslationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationResult.h; sourceTree = "<group>"; };
+		BED954541B4CE8A000C1BF9F /* TranslationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,7 @@
 		BED953C41B4B510000C1BF9F /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				BED9544C1B4CE63800C1BF9F /* Models */,
 				BED954381B4BBBB800C1BF9F /* UI */,
 				BED954311B4BB1BB00C1BF9F /* Resources */,
 				BED954151B4B906000C1BF9F /* TranslatorMainViewController */,
@@ -194,6 +204,19 @@
 				BED9543D1B4BBC8600C1BF9F /* PickerTextField.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		BED9544C1B4CE63800C1BF9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BED9544D1B4CE65F00C1BF9F /* Language.h */,
+				BED9544E1B4CE65F00C1BF9F /* Language.m */,
+				BED954501B4CE72F00C1BF9F /* TranslationResultList.h */,
+				BED954511B4CE72F00C1BF9F /* TranslationResultList.m */,
+				BED954531B4CE8A000C1BF9F /* TranslationResult.h */,
+				BED954541B4CE8A000C1BF9F /* TranslationResult.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +325,10 @@
 			files = (
 				BED954431B4BCB9F00C1BF9F /* AppPref.m in Sources */,
 				BED953CB1B4B510000C1BF9F /* AppDelegate.m in Sources */,
+				BED9544F1B4CE65F00C1BF9F /* Language.m in Sources */,
+				BED954551B4CE8A000C1BF9F /* TranslationResult.m in Sources */,
 				BED9543B1B4BBBFA00C1BF9F /* DropDownArrowView.m in Sources */,
+				BED954521B4CE72F00C1BF9F /* TranslationResultList.m in Sources */,
 				BED954291B4B94D300C1BF9F /* TranslatorHeaderTableViewCell.m in Sources */,
 				BED953EE1B4B529100C1BF9F /* AppController.m in Sources */,
 				BED9543E1B4BBC8600C1BF9F /* PickerTextField.m in Sources */,

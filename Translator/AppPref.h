@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface AppPref : NSObject
-
++(NSArray*) getLanguages;
 @end
