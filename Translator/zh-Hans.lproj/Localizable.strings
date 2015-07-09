@@ -5,7 +5,8 @@
   Created by Kevin Mun Kuang Tzer on 7/7/15.
   Copyright (c) 2015 Kevin Mun Kuang Tzer. All rights reserved.
 */
-"MainTableViewController_title" = "CrossOver Translator";
-"english_key" = "English";
-"french_key" = "French";
-"polish_key" = "Polish";
+"MainTableViewController_title" = "CrossOver 翻译者";
+"english_key" = "英语";
+"french_key" = "法国语";
+"polish_key" = "波兰语";
+"TranslationTableView_loading" = "加载中";

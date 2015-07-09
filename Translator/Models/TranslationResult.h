@@ -11,4 +11,5 @@
 @interface TranslationResult : NSObject
 @property (nonatomic,strong) NSString* translatedPhrase;
 @property (nonatomic,strong) NSString* meaning;
+@property (nonatomic,strong) NSString* translatedLanguage;
 @end

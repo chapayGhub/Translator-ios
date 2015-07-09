@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class TranslationResult;
+#import "TranslationResult.h"
 @interface TranslationResultList : NSObject
 @property (nonatomic, strong) NSArray* results;
 

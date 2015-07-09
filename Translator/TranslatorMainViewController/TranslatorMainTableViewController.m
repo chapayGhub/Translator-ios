@@ -14,6 +14,7 @@ static NSString *const TRANSLATOR_HEADER_FIELD = @"TranslatorHeaderField";
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet PickerTextField *fromPicker;
 @property (weak, nonatomic) IBOutlet PickerTextField *toPicker;
+@property (weak, nonatomic) IBOutlet UIButton *inverseButton;
 @property (nonatomic, assign) int page;
 @property (nonatomic, assign) BOOL isLoading;
 @property (nonatomic, assign) BOOL allLoaded;
@@ -27,6 +28,7 @@ static NSString *const TRANSLATOR_HEADER_FIELD = @"TranslatorHeaderField";
 
 @implementation TranslatorMainTableViewController
 static int PER_PAGE = 30;
+static NSString* templateWikiLink = @"http://%@.wikipedia.org/wiki/%@";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +39,7 @@ static int PER_PAGE = 30;
         self.languages = array;
     }];
     self.page = 0;
+    self.results = [[NSMutableArray alloc]init];
     self.isLoading = FALSE;
     self.allLoaded = FALSE;
     self.sentLoad = FALSE;
@@ -99,16 +102,28 @@ static int PER_PAGE = 30;
             TranslatorHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TRANSLATOR_HEADER_FIELD forIndexPath:indexPath];
             [cell.searchButton addTarget:self action:@selector(startSearch) forControlEvents:UIControlEventTouchUpInside];
             self.searchTextField = cell.searchTextField;
-            cell.fromPicker.pickerDataSource = self;
-            cell.fromPicker.pickerDelegate = self;
-            cell.fromPicker.tag = 0;
-            self.fromPicker = cell.fromPicker;
-            [self setDefaultChoice:self.fromPicker];
-            cell.toPicker.pickerDataSource = self;
-            cell.toPicker.pickerDelegate = self;
-            cell.toPicker.tag = 1;
-            self.toPicker = cell.toPicker;
-            [self setDefaultChoice:self.toPicker];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            if(self.fromPicker==nil){
+                cell.fromPicker.pickerDataSource = self;
+                cell.fromPicker.pickerDelegate = self;
+                cell.fromPicker.tag = 0;
+                self.fromPicker = cell.fromPicker;
+                [self setDefaultChoice:self.fromPicker];
+            }
+            
+            if(self.toPicker == nil){
+                cell.toPicker.pickerDataSource = self;
+                cell.toPicker.pickerDelegate = self;
+                cell.toPicker.tag = 1;
+                self.toPicker = cell.toPicker;
+                [self setDefaultChoice:self.toPicker];
+            }
+            
+            if(self.inverseButton == nil){
+                self.inverseButton = cell.inverseButton;
+                [self.inverseButton addTarget:self action:@selector(inverseSelection) forControlEvents:UIControlEventTouchUpInside];
+            }
+            
             return cell;
         }
         return nil;
@@ -123,10 +138,27 @@ static int PER_PAGE = 30;
             [activityView startAnimating];
             [cell setAccessoryView:activityView];
             cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.textLabel.text = NSLocalizedString(@"VenueTableView_loading", nil);
+            cell.textLabel.text = NSLocalizedString(@"TranslationTableView_loading", nil);
+            if (!self.allLoaded && !self.isLoading) {
+                self.page += 1;
+                __weak typeof(self)weakSelf = self;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf loadTranslations:weakSelf.currentPhrase from:weakSelf.fromLanguage to:weakSelf.toLanguage page:weakSelf.page];
+                });
+            }
             return cell;
         }
-        return nil;
+        TranslationResult *result = [self.results objectAtIndex:indexPath.row];
+        UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"ResultCell"];
+        if(cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ResultCell"];
+        }
+        cell.textLabel.text = result.translatedPhrase;
+        cell.detailTextLabel.text = result.meaning;
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 1)];
+        view.backgroundColor = [UIColor grayColor];
+        [cell addSubview:view];
+        return cell;
     }
 }
 
@@ -136,6 +168,22 @@ static int PER_PAGE = 30;
     else
         return 40;
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section!=0){
+        if(indexPath.row < [self.results count]){
+            TranslationResult *result = [self.results objectAtIndex:indexPath.row];
+            if(result!=nil){
+                if([result.translatedPhrase length]>0){
+                    NSString *link = [NSString stringWithFormat:templateWikiLink,result.translatedLanguage,result.translatedPhrase];
+                    link = [link stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: link]];
+                }
+            }
+        }
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void) startSearch{
@@ -150,6 +198,14 @@ static int PER_PAGE = 30;
         
         [self loadTranslations:self.currentPhrase from:self.fromLanguage to:self.toLanguage page:self.page];
     }
+}
+
+-(void) inverseSelection{
+    int fromSelectedRow = self.fromPicker.selectedRow;
+    int toSelectedRow = self.toPicker.selectedRow;
+    
+    [self setPickerChoice:self.fromPicker choice:toSelectedRow];
+    [self setPickerChoice:self.toPicker choice:fromSelectedRow];
 }
 
 #pragma mark UI Picker data Source
@@ -181,70 +237,13 @@ static int PER_PAGE = 30;
 }
 
 -(void)setDefaultChoice:(PickerTextField*)picker{
-    Language *language = [self.languages objectAtIndex:0];
+    [self setPickerChoice:picker choice:0];
+}
+
+-(void) setPickerChoice:(PickerTextField*)picker choice:(int)choice{
+    Language *language = [self.languages objectAtIndex:choice];
     picker.text = language.languageName;
-    picker.selectedRow = 0;
+    picker.selectedRow = choice;
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
